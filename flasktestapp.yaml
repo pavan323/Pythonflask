@@ -15,7 +15,7 @@ spec:
     spec: 
       containers: 
       - name: flasktestapp
-        image: manoj96/app:latest
+        image: pavan323/app:latest
         ports: 
         - containerPort: 8000
 --- 

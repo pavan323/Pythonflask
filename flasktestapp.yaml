@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: flasktestapp-deployment
+spec: 
+  selector: 
+    matchLabels: 
+      app: flasktestapp
+  replicas: 1
+  template:
+    metadata: 
+      labels: 
+        app: flasktestapp
+    spec: 
+      containers: 
+      - name: flasktestapp
+        image: manoj96/app:latest
+        ports: 
+        - containerPort: 8000
+--- 
+kind: Service 
+apiVersion: v1 
+metadata: 
+  name: flasktestapp
+spec: 
+  selector:
+    app: flasktestapp
+  ports: 
+  - port: 80 
+    targetPort: 8000
+  type: LoadBalancer
+

@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
         /* This builds the actual image */
-	sh "docker build -t manoj96/app:latest ."
+	sh "docker build -t pavan323/app:latest ."
         /*sh "docker build -t manoj96/app:${currentBuild.number} ."
         app = docker.build("anandr72/nodeapp")*/
     }
@@ -24,8 +24,8 @@ node {
             app.push("latest")
             }*/
         withCredentials([string(credentialsId: 'DockerUsername', variable: 'DockerUsername'), string(credentialsId: 'DockerPassword', variable: 'DockerPassword')]) {
-		    sh "docker login -u manoj96 -p ${DockerPassword}"
-		    sh "docker push manoj96/app"
+		    sh "docker login -u pavan323 -p ${DockerPassword}"
+		    sh "docker push pavan323/app"
 	}
                 echo "Trying to Push Docker Build to DockerHub"
     }

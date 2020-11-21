@@ -33,8 +33,9 @@ node {
         /* 
 			You would need to first register with DockerHub before you can push images to your account
 		*/
-        sh "kubectl apply -f flasktestapp.yaml"
-	sh "kubectl get services"
+       /* sh "kubectl apply -f flasktestapp.yaml"
+	sh "kubectl get services"*/
+	echo "Hello World"
     }
 
 }

@@ -10,8 +10,8 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 	sh "docker build -t pavan323/app:latest ."
-        /*sh "docker build -t manoj96/app:${currentBuild.number} ."
-        app = docker.build("anandr72/nodeapp")*/
+        /*sh "docker build -t pavan323/app:${currentBuild.number} ."
+        app = docker.build("pavan323/nodeapp")*/
     }
 
 
